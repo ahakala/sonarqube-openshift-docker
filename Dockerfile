@@ -28,7 +28,9 @@ RUN set -x \
     && unzip sonarqube.zip \
     && mv sonarqube-$SONAR_VERSION sonarqube \
     && rm sonarqube.zip* \
-    && rm -rf $SONARQUBE_HOME/bin/*
+    && rm -rf $SONARQUBE_HOME/bin/*] \
+    && curl -o sonar-dependency-check-plugin-1.1.0.jar https://github.com/stevespringett/dependency-check-sonar-plugin/releases/download/1.1.0/sonar-dependency-check-plugin-1.1.0.jar \
+    && mv sonar-dependency-check-plugin-1.1.0.jar $SONARQUBE_HOME/extensions/plugins/
 
 WORKDIR $SONARQUBE_HOME
 COPY run.sh $SONARQUBE_HOME/bin/
