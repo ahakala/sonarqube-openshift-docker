@@ -38,7 +38,8 @@ COPY run.sh $SONARQUBE_HOME/bin/
 
 RUN useradd -r sonar
 RUN /usr/bin/fix-permissions $SONARQUBE_HOME \
-    && chmod 775 $SONARQUBE_HOME/bin/run.sh
+    && chmod 775 $SONARQUBE_HOME/bin/run.sh \ 
+    && chmod +x $SONARQUBE_HOME/extensions/plugins/sonar-dependency-check-plugin-1.1.0.jar
 
 USER sonar
 ENTRYPOINT ["./bin/run.sh"]
