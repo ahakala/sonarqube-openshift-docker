@@ -30,7 +30,7 @@ RUN set -x \
     && mv sonarqube-$SONAR_VERSION sonarqube \
     && rm sonarqube.zip* \
     && rm -rf $SONARQUBE_HOME/bin/*] \
-    && curl -o sonar-dependency-check-plugin-1.1.0.jar https://bintray.com/stevespringett/owasp/download_file?file_path=org%2Fsonarsource%2Fowasp%2Fsonar-dependency-check-plugin%2F1.1.0%2Fsonar-dependency-check-plugin-1.1.0.jar \
+    && curl -o sonar-dependency-check-plugin-1.1.0.jar https://dl.bintray.com/stevespringett/owasp/sonar-dependency-check-plugin-1.0.0.jar \
     && mv sonar-dependency-check-plugin-1.1.0.jar sonarqube/extensions/plugins/
 
 WORKDIR $SONARQUBE_HOME
